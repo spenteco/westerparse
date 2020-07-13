@@ -17,14 +17,24 @@ from music21 import *
 import itertools
 #import time
 
-import vlChecker
-import parser
-import keyFinder
-import csd
-import rule
-import dependency
-import consecutions
-from utilities import pairwise
+if 'westerparse' in __name__:
+    from . import vlChecker
+    from . import parser
+    from . import keyFinder
+    from . import csd
+    from . import rule
+    from . import dependency
+    from . import consecutions
+    from .utilities import pairwise
+else:
+    import vlChecker
+    import parser
+    import keyFinder
+    import csd
+    import rule
+    import dependency
+    import consecutions
+    from utilities import pairwise
 
 # -----------------------------------------------------------------------------
 # EXCEPTION HANDLERS

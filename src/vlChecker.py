@@ -87,14 +87,21 @@ or
 # NB: vPair parts are numbered bottom to top
 
 from music21 import *
-# TODO may not need to import csd and context, since these are already active?
-import csd
-import context
-import theoryAnalyzerWP
-import theoryResultWP
-import itertools
-from utilities import *
 
+if 'westerparse' in __name__:
+    from . import csd
+    from . import context
+    from . import theoryAnalyzerWP
+    from . import theoryResultWP
+    from .utilities import *
+else:
+    import csd
+    import context
+    import theoryAnalyzerWP
+    import theoryResultWP
+    from utilities import *
+    
+import itertools
 
 # -----------------------------------------------------------------------------
 # MODULE VARIABLES

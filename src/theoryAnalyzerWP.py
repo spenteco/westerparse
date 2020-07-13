@@ -173,8 +173,10 @@ from music21 import roman
 from music21 import stream
 from music21 import voiceLeading
 
-import theoryResultWP
-#from . import theoryResult
+if 'westerparse' in __name__:
+    from . import theoryResultWP
+else:
+    import theoryResultWP
 
 from music21 import environment
 _MOD = 'theoryAnalyzer.py'

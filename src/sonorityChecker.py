@@ -16,12 +16,17 @@
 
 
 from music21 import *
-from vlChecker import *
-import context
-import theoryAnalyzerWP
-import theoryResultWP
-#import itertools
-#from music21 import tree
+
+if 'westerparse' in __name__:
+    from .vlChecker import *
+    from . import context
+    from . import theoryAnalyzerWP
+    from . import theoryResultWP
+else:
+    from vlChecker import *
+    import context
+    import theoryAnalyzerWP
+    import theoryResultWP
 
 # -----------------------------------------------------------------------------
 # MODULE VARIABLES

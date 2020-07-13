@@ -28,10 +28,18 @@ For more information on how to use these scripts, see the User's Guide.
 '''
 
 from music21 import *
-import parser
-import vlChecker
-from context import *
-from utilities import pairwise
+
+if 'westerparse.' in __name__:
+    from . import parser
+    from . import vlChecker
+    from .context import *
+    from .utilities import pairwise
+else:
+    import parser
+    import vlChecker
+    from context import *
+    from utilities import pairwise
+    
 import time
 
 # -----------------------------------------------------------------------------

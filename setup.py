@@ -7,8 +7,9 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
+    #name='westerparse-pkg-snarrenberg',
     name='westerparse',
-    version='1.0.3-alpha',
+    version='1.0.2-alpha',
     description='An application for evaluating Westergaardian species counterpoint',
     long_description=long_description,
     long_description_content_type='text/markdown', 
@@ -19,8 +20,10 @@ setup(
                    'Operating System :: OS Independent',
                    'License :: OSI Approved :: BSD License',
     ],
+    #package_dir={'': 'src'},
+    #packages=find_packages(where='src'), 
     package_dir={'westerparse': 'src'},
-    packages=['westerparse'], 
+    packages=['westerparse'],
     python_requires='>=3.5, <4',
     install_requires=['music21'],
     #dependency_links['https://github.com/cuthbertLab/music21']

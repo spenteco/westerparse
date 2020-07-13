@@ -42,7 +42,12 @@ The parser also records errors that arise.
 '''
 
 from music21 import *
-from utilities import pairwise
+
+if 'westerparse' in __name__:
+    from .utilities import pairwise
+else:
+    from utilities import pairwise
+    
 import itertools
 import copy
 
